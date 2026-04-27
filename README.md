@@ -96,6 +96,8 @@ d) Build or install PDK libraries (optional).
 e) Set the PDK path so tools like Magic, Ngspice, and Netgen can locate it easily.
 
 <img width="953" height="1006" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/08fed880a437ae51152f671438f4bb80874a0ccb/fwdprelayoutandpostlayout/1.png" />
+<img width="964" height="1015" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/21.png" />
+<img width="958" height="984" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/23.png" />
 
 ### 3. The BGR Principle
 
@@ -243,7 +245,7 @@ The Error:
 The simulator crashed with: Error: Could not find include file ../../../cells/rf_nfet_01v8/sky130_fd_pr__rf_nfet_01v8_b__tt.corner.spice.
 This happens because the open-source Sky130 library sometimes contains broken relative paths to RF components that are not required for this basic analog design.
 
-
+<img width="1024" height="674" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/25.png" />
 
 ### The Fix:
 Instead of manually hunting down the broken file, I used a Linux stream editor (sed) command to automatically find the broken .include line inside the tt corner file and comment it out (adding an asterisk * at the beginning of the line).
@@ -264,7 +266,7 @@ Temperature Coefficient ≈ -1.73 mV/°C
 
 This aligns with the theoretical expectation of approximately -2 mV/°C, confirming that the CTAT block is functioning correctly and is ready to be integrated into the main Bandgap Reference circuit.
 
-
+<img width="1024" height="542" alt="image" src="https://github.com/user-attachments/assets/ebfbafb0-f600-4272-a19c-fb963a488b19](https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/17.png" />
 
 5.5 CTAT Voltage under Variable Bias Current
 To further understand the behavior of the CTAT block, it is important to observe how the base-emitter voltage (V<sub>BE</sub>) changes under different biasing conditions. The V<sub>BE</sub> of a BJT is logarithmically dependent on its collector/emitter current.
@@ -279,7 +281,7 @@ Vertical Shift: As the bias current increases, the entire CTAT line shifts upwar
 
 Slope Variation: The terminal output shows slope calculations (dy/dx) for different curves (e.g., -1.92 mV/°C, -1.74 mV/°C). This demonstrates that changing the bias current slightly alters the Temperature Coefficient (TC) of the diode.
 
-
+<img width="1024" height="432" alt="image" src="https://github.com/user-attachments/assets/1bdb4a2b-f48e-4335-b8ca-1e7e7a29447d](https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/2.png" />
 
 ### 6. PTAT Voltage Generation and Simulation
 With the CTAT block verified, the next step is generating the PTAT (Proportional to Absolute Temperature) voltage. This voltage must increase with temperature to successfully cancel out the CTAT's negative slope.
@@ -322,7 +324,7 @@ v(ra1) - v(qp2): The difference between them (Yellow line).
 
 The resulting graph perfectly demonstrates the PTAT principle. While the individual BJT voltages drop with temperature (CTAT behavior), the difference between them (the yellow line) starts low and slopes upwards, providing the exact positive temperature coefficient needed for the final Bandgap Reference.
 
-
+<img width="1024" height="528" alt="image" src="https://github.com/user-attachments/assets/6296bd2b-286e-4bc6-bbb3-0f3b95121e7c](https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/3.png" />
 
 
 ### 7. Ideal Op-Amp Based Bandgap Reference Simulation
@@ -366,7 +368,7 @@ By plotting v(qp1) and v(ra1), we can confirm that the VCVS is successfully forc
 PTAT Current Generation:
 By plotting the current through the dummy ammeters (vid1#branch and vid2#branch), the graph confirms that the PMOS current mirrors and the BJT ΔV<sub>BE</sub> are successfully generating a PTAT current that slopes linearly upwards.
 
-
+<img width="1600" height="899" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/18.png" />
 
 7.4 Final Bandgap Voltage Verification
 With the internal mechanics verified, I plotted the final reference voltage.
@@ -374,7 +376,7 @@ With the internal mechanics verified, I plotted the final reference voltage.
 The BGR Parabola:
 Plotting v(vref) yields the classic "Bandgap Parabola." Because the CTAT and PTAT slopes are not perfectly linear across all extremes of temperature, their sum creates a slight curvature. The voltage remains incredibly stable, peaking precisely around 1.237 V, confirming a highly stable reference.
 
-<img width="1024" height="567" alt="image" src="https://github.com/user-attachments/assets/226b328d-0650-4828-b6f9-745d5b64fa23" />
+<img width="1024" height="567" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/2.png" />
 
 The Component Breakdown (The "Holy Grail" Plot):
 To visually demonstrate the core principle of the Bandgap Reference, I plotted the constituent voltages on a single graph:
@@ -385,7 +387,7 @@ Red Line v(vref) - v(qp3): The scaled PTAT voltage across the resistor, increasi
 
 Orange Line v(vref): The sum of the Red and Blue lines. The opposing slopes perfectly cancel out, resulting in the flat, stable 1.23 V reference.
 
-
+<img width="553" height="436" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/3.png" />
 
 This successfully completes the verification of the Ideal Op-Amp BGR topology. The next stage involves replacing the ideal VCVS with a real, transistor-level Self-Biased Current Mirror.
 
@@ -401,7 +403,7 @@ When running the initial .sp netlist on ngspice 45+, the simulation halted immed
 Too few parameters for subcircuit type "sky130_fd_pr__pnp_05v5_w3p40l3p40" (instance: xxqp1)
 Simulation interrupted due to error!
 
-
+<img width="974" height="587" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/10.png" />
 
 ### The Root Cause:
 This issue stems from stricter syntax enforcement in newer versions of ngspice, combined with how the Skywater 130nm BJT models are defined.
@@ -427,7 +429,6 @@ xqp2  gnd  gnd  qp2  gnd  sky130_fd_pr__pnp_05v5_W3p40L3p40       m=8
 xqp3  gnd  gnd  qp3  gnd  sky130_fd_pr__pnp_05v5_W3p40L3p40       m=1
 
 
-
 7.5.2 The Cascading Plot Error
 ### The Symptom:
 Following the BJT error, the terminal outputted a secondary error during the .control block execution:
@@ -445,11 +446,11 @@ With the netlist corrected, ngspice 45+ successfully executed the simulation in 
 
 Transient Start-up Response: The simulation confirmed the start-up circuit (comprising MP4, MP5, and MN3) successfully pulled the system out of the zero-current degenerate state. The supply voltage (VDD) ramped up, and the internal nodes (like net1 and net2) settled to their expected steady-state DC operating points, pulling VREF to its stable reference value.
 
-
+<img width="721" height="558" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/9.png" />
 
 Temperature Sweep (DC Analysis): The parabolic "bow" curve of VREF vs. Temperature (from -40°C to 120°C) was successfully plotted. This validates that the Proportional to Absolute Temperature (PTAT) and Complementary to Absolute Temperature (CTAT) currents are correctly summing to provide a temperature-independent reference voltage near the center of our operating range.
 
-
+<img width="1024" height="617" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/14.png" />
 
 ### 8. Physical Implementation: Top-Level BGR Layout
 Objective: To document the physical layout of the complete Bandgap Reference circuit using the Skywater 130nm PDK. The layout employs a modular, mismatch-resilient approach to ensure accurate PTAT/CTAT current generation across process and temperature variations.
@@ -488,26 +489,29 @@ The blocks are arranged to minimize the routing distance of sensitive analog nod
 The layout successfully passed Design Rule Checks (DRC) in the Magic VLSI tool, ensuring strict manufacturability compliance with the Sky130 process node.
 
 Layout Snapshots
-Figure 1: PMOS transistor array featuring multi-finger layout and protective dummy cells.
+ PMOS transistor array featuring multi-finger layout and protective dummy cells.
+
+<img width="1448" height="722" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/5.png" />
+
+ NMOS transistor array for the bottom current mirrors.
+
+<img width="1434" height="713" alt="image" src="[https://github.com/user-attachments/assets/d264a2e3-33b0-4a72-adb8-1c7a971d37c6](https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/9.png)" />
+
+ High-poly resistor bank layout.
 
 
 
-Figure 2: NMOS transistor array for the bottom current mirrors.
-
-
-Figure 3: High-poly resistor bank layout.
+ BJT array utilizing a Common Centroid layout with a dummy ring for optimal 1:8 thermal matching.
 
 
 
-Figure 4: BJT array utilizing a Common Centroid layout with a dummy ring for optimal 1:8 thermal matching.
+ Complete, DRC-clean integrated physical layout of the BGR circuit.
 
 
 
-Figure 5: Complete, DRC-clean integrated physical layout of the BGR circuit.
+ Verification of Results.
 
 
-
-Figure 6: Verification of Results.
-
+<img width="1499" height="842" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/17.png" />
 
 May your DRCs always be clean, and your LVS perfectly matched. Thanks for stopping by!
