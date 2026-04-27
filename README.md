@@ -489,29 +489,30 @@ The blocks are arranged to minimize the routing distance of sensitive analog nod
 The layout successfully passed Design Rule Checks (DRC) in the Magic VLSI tool, ensuring strict manufacturability compliance with the Sky130 process node.
 
 Layout Snapshots
- PMOS transistor array featuring multi-finger layout and protective dummy cells.
+ Figure 1: PMOS transistor array featuring multi-finger layout and protective dummy cells.
 
-<img width="1448" height="722" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/5.png" />
+<img width="1448" height="722" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/32729dc6a5f052fcfe736ec4212ba374d688ac2f/Screenshot%202026-04-27%20141322.png" />
 
- NMOS transistor array for the bottom current mirrors.
+ Figure 2: NMOS transistor array for the bottom current mirrors.
 
-<img width="1434" height="713" alt="image" src="[https://github.com/user-attachments/assets/d264a2e3-33b0-4a72-adb8-1c7a971d37c6](https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/9.png)" />
+<img width="1434" height="713" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/32729dc6a5f052fcfe736ec4212ba374d688ac2f/Screenshot%202026-04-27%20141449.png" />
 
- High-poly resistor bank layout.
+ Figure 3: High-poly resistor bank layout.
 
+<img width="1600" height="749" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/32729dc6a5f052fcfe736ec4212ba374d688ac2f/Screenshot%202026-04-27%20141534.png" />
+<img width="1600" height="666" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/32729dc6a5f052fcfe736ec4212ba374d688ac2f/Screenshot%202026-04-27%20141602.png" />
 
+ Figure 4: BJT array utilizing a Common Centroid layout with a dummy ring for optimal 1:8 thermal matching.
 
- BJT array utilizing a Common Centroid layout with a dummy ring for optimal 1:8 thermal matching.
+<img width="1456" height="712" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/32729dc6a5f052fcfe736ec4212ba374d688ac2f/Screenshot%202026-04-27%20141619.png" />
 
+ Figure 5: Complete, DRC-clean integrated physical layout of the BGR circuit.
 
+<img width="1532" height="761" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/32729dc6a5f052fcfe736ec4212ba374d688ac2f/Screenshot%202026-04-27%20141631.png" />
 
- Complete, DRC-clean integrated physical layout of the BGR circuit.
+ Figure 6: Verification of Results.
 
-
-
- Verification of Results.
-
-
+<img width="1238" height="736" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/32729dc6a5f052fcfe736ec4212ba374d688ac2f/Screenshot%202026-04-27%20141645.png" />
 <img width="1499" height="842" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/17.png" />
 
 May your DRCs always be clean, and your LVS perfectly matched. Thanks for stopping by!
