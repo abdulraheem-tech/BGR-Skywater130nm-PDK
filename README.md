@@ -95,7 +95,7 @@ d) Build or install PDK libraries (optional).
 
 e) Set the PDK path so tools like Magic, Ngspice, and Netgen can locate it easily.
 
-<img width="953" height="1006" alt="image" src="[https://github.com/user-attachments/assets/12bc21fa-9c67-4edc-b1e5-222b2808dd9a](https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/08fed880a437ae51152f671438f4bb80874a0ccb/fwdprelayoutandpostlayout/1.png)" />
+<img width="953" height="1006" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/08fed880a437ae51152f671438f4bb80874a0ccb/fwdprelayoutandpostlayout/1.png" />
 
 ### 3. The BGR Principle
 
