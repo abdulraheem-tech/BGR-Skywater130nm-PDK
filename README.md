@@ -266,7 +266,7 @@ Temperature Coefficient ≈ -1.73 mV/°C
 
 This aligns with the theoretical expectation of approximately -2 mV/°C, confirming that the CTAT block is functioning correctly and is ready to be integrated into the main Bandgap Reference circuit.
 
-<img width="1024" height="542" alt="image" src="https://github.com/user-attachments/assets/ebfbafb0-f600-4272-a19c-fb963a488b19](https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/17.png" />
+<img width="1024" height="542" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/ef2dcd1e32bef539fcd702b18f6f9b961b5ba030/fwdprelayoutandpostlayout/7.png" />
 
 5.5 CTAT Voltage under Variable Bias Current
 To further understand the behavior of the CTAT block, it is important to observe how the base-emitter voltage (V<sub>BE</sub>) changes under different biasing conditions. The V<sub>BE</sub> of a BJT is logarithmically dependent on its collector/emitter current.
@@ -281,7 +281,7 @@ Vertical Shift: As the bias current increases, the entire CTAT line shifts upwar
 
 Slope Variation: The terminal output shows slope calculations (dy/dx) for different curves (e.g., -1.92 mV/°C, -1.74 mV/°C). This demonstrates that changing the bias current slightly alters the Temperature Coefficient (TC) of the diode.
 
-<img width="1024" height="432" alt="image" src="https://github.com/user-attachments/assets/1bdb4a2b-f48e-4335-b8ca-1e7e7a29447d](https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/2.png" />
+<img width="1024" height="432" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/ef2dcd1e32bef539fcd702b18f6f9b961b5ba030/fwdprelayoutandpostlayout/5.png" />
 
 ### 6. PTAT Voltage Generation and Simulation
 With the CTAT block verified, the next step is generating the PTAT (Proportional to Absolute Temperature) voltage. This voltage must increase with temperature to successfully cancel out the CTAT's negative slope.
@@ -324,7 +324,7 @@ v(ra1) - v(qp2): The difference between them (Yellow line).
 
 The resulting graph perfectly demonstrates the PTAT principle. While the individual BJT voltages drop with temperature (CTAT behavior), the difference between them (the yellow line) starts low and slopes upwards, providing the exact positive temperature coefficient needed for the final Bandgap Reference.
 
-<img width="1024" height="528" alt="image" src="https://github.com/user-attachments/assets/6296bd2b-286e-4bc6-bbb3-0f3b95121e7c](https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/3.png" />
+<img width="1024" height="528" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/ef2dcd1e32bef539fcd702b18f6f9b961b5ba030/fwdprelayoutandpostlayout/10.png" />
 
 
 ### 7. Ideal Op-Amp Based Bandgap Reference Simulation
