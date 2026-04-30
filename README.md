@@ -2,7 +2,7 @@
 
 **Author:** Dr M A RAHEEM
 
-Design and Implementation of # ANALOG BANDGAP VOLTAGE REFERENCE CIRCUIT DESIGN ***using opensource tool using Sky130 Process Design Kit
+Design and Implementation of  ANALOG BANDGAP VOLTAGE REFERENCE CIRCUIT DESIGN using opensource tool using Sky130 Process Design Kit
 
 ## Objective
 a.	To study the principles of bandgap voltage reference circuits and their design methodologies.
