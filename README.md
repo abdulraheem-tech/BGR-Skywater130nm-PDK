@@ -566,8 +566,8 @@ ngspice: SPICE circuit simulator
 Course Materials
 VSD - VLSI System Design
 
-Simulation: ngspice,  Feb 22, 2026
+Simulation: ngspice,  April 30, 2026
 
 Author: Dr M A Raheem
-Contact: abdulraheem@mjcolelge.ac.in GitHub: https://github.com/abdulraheem-tech
+Contact: abdulraheem@mjcollege.ac.in GitHub: https://github.com/abdulraheem-tech
 
