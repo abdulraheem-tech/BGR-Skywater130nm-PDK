@@ -59,7 +59,8 @@ At its core, the Bandgap Reference circuit works as follows:
 <img width="937" height="571" alt="image" src="https://github.com/user-attachments/assets/834f328b-4c6b-47ce-8d3a-04dcef6688b4" />
 
 ---
-
+### 1.3 Literature work of BGR
+The literature survey reveals that bandgap voltage reference design has evolved significantly over the past three decades, from the classical Widlar topology to modern sub-1V, nanopower implementations. The common thread across all designs is the exploitation of the PTAT and CTAT temperature characteristics of semiconductor devices to achieve a stable reference voltage
 ## 2. Tool and PDK Setup
 
 ### 2.1 Tools Setup
@@ -173,6 +174,20 @@ a) Lower PSRR: More susceptible to variations in the main power supply (cascodin
 b) Voltage Headroom: Stacked transistors limit how low the main supply voltage can go.
 
 c) Start-up Dependency: Absolutely requires a robust start-up circuit to prevent failure at power-on.
+
+3.4  Bandgap Principle
+
+The condition for temperature independence of VREF is obtained by setting the derivative of VREF with respect to temperature equal to zero:
+
+dVREF/dT = dVBE/dT + α × (k/q) × ln(n) = 0     ... (3.5)
+
+Since dVBE/dT ≈ −2 mV/°C and k/q = 86.17 µV/K, the coefficient α can be determined from the area ratio n and the desired cancellation. When the cancellation condition is satisfied, VREF converges to a value that extrapolates to the silicon bandgap energy at 0 Kelvin:
+
+VREF ≈ Eg/q ≈ 1.12V    (extrapolated to 0K)     ... (3.6)
+
+At room temperature (300K), the practical bandgap reference voltage is approximately 1.2V due to the residual temperature dependence of higher-order terms. This explains why the classic bandgap reference output voltage is ~1.2V, regardless of the technology node or supply voltage (within limits).
+
+It should be noted that Equation (3.4) represents a first-order cancellation. In practice, VBE has a non-linear (higher-order) temperature dependence due to the temperature coefficient of IS. This results in a residual curvature in VREF versus temperature that requires additional compensation techniques (curvature correction) to reduce the TC below approximately 10 ppm/°C.
 
 ## 4. Design and Pre-layout Simulation
 For the practical implementation of the BGR circuit, the SkyWater SKY130 (130 nm) PDK is used. Before designing the complete circuit, the specific design requirements must be calculated.
@@ -528,3 +543,31 @@ Layout Snapshots
 <img width="1499" height="842" alt="image" src="https://github.com/abdulraheem-tech/BGR-Skywater130nm-PDK/blob/7a2c5259a81f463e6f2783049e1225a53d06295f/fwdprelayoutandpostlayout/17.png" />
 
 May your DRCs always be clean, and your LVS perfectly matched. Thanks for stopping by!
+
+
+References and Acknowledgments
+
+Technical References
+xshcme Documentation: (https://xschem.sourceforge.io/stefan/index.html
+
+SkyWater PDK: https://skywater-pdk.readthedocs.io/
+
+ngspice Manual: (https://ngspice.sourceforge.io/)
+
+Magic Layout Tool: http://opencircuitdesign.com/magic/
+
+Open-Source Tools
+xshcme: is a schematic capture program, it allows creation of hierarchical representation of circuits with a top down approach 
+
+Magic: VLSI layout tool
+
+ngspice: SPICE circuit simulator
+
+Course Materials
+VSD - VLSI System Design
+
+Simulation: ngspice,  Feb 22, 2026
+
+Author: Dr M A Raheem
+Contact: abdulraheem@mjcolelge.ac.in GitHub: https://github.com/abdulraheem-tech
+
