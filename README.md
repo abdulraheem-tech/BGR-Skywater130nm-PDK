@@ -1,15 +1,27 @@
 # Bandgap Reference (BGR) Design using Sky130 PDK
 
-**Author:** Shivasailanathan R
+**Author:** Dr M A RAHEEM
 
-This project documents my work on the Bandgap Reference circuit using the Sky130 PDK, from theoretical concept to physical layout implementation.
+Design and Implementation of ANALOG BANDGAP VOLTAGE REFERENCE CIRCUIT DESIGN using opensource tool using Sky130 Process Design Kit
 
 ## Objective
-To design a stable voltage reference circuit that remains independent of temperature and process variations using the open-source SkyWater 130nm process node.
+a.	To study the principles of bandgap voltage reference circuits and their design methodologies.
+
+b.	To design a low-voltage bandgap voltage reference circuit using 180nm CMOS technology.
+
+c.	To implement and simulate the circuit using Open Source EDA tool.
+
+d.	To perform pre-layout simulation to verify the functionality and performance of the designed circuit.
+
+e.	To perform physical layout design and conduct post-layout simulation to validate the design under realistic parasitic conditions.
+
 
 ---
 
 ## 1. Introduction
+In modern analog and mixed-signal integrated circuit design, a precise and stable voltage reference is one of the most critical building blocks. A voltage reference circuit is required to generate a DC output voltage that remains constant regardless of variations in temperature, supply voltage, and process parameters. Among the various techniques available for generating reference voltages, the bandgap voltage reference has become the industry standard due to its excellent stability characteristics derived from fundamental physical properties of semiconductor devices.
+
+The bandgap voltage reference derives its name from the silicon bandgap energy of approximately 1.12 eV, which corresponds to a reference voltage near 1.2V at absolute zero. The principle behind the bandgap reference relies on combining two temperature-dependent voltages: the base-emitter voltage (VBE) of a bipolar junction transistor, which decreases with temperature (CTAT), and the thermal voltage (VT = kT/q), which increases with temperature (PTAT). When these two opposing temperature dependencies are properly summed with appropriate weighting, the result is a temperature-independent reference voltage close to the silicon bandgap voltage of approximately 1.2V.
 
 A **Bandgap Reference (BGR)** circuit is an essential building block in analog and mixed-signal integrated circuits. Its main function is to generate a **stable reference voltage** that remains **independent of temperature, supply voltage, and process variations**. This stable voltage is used in many critical applications such as ADCs, DACs, voltage regulators, and biasing circuits.
 
